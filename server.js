@@ -4,8 +4,9 @@ const express = require('express'),
 	MongoStore = require('connect-mongo')(session),
 	compression = require('compression'),
 	bodyParser = require('body-parser'),
-	passport = require('passport'),
+	passport = require('./config/passport'),
 	dbConfig = require('./config/dbConfig'),
+	routes = require('./routes'),
 	app = express(),
 	PORT = process.env.PORT || 3001;
 
@@ -17,7 +18,8 @@ app.use(compression());
 // DB connection
 mongoose.connect(dbConfig.DB_URI, {
 	useNewUrlParser: true,
-	useUnifiedTopology: true
+	useUnifiedTopology: true,
+	useCreateIndex: true
 })
 	.then(() => console.log('Connected to DB...'))
 	.catch(err => {
@@ -39,6 +41,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+app.use(routes);
 
 // Start the API server
 app.listen(PORT, function () {
