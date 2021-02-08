@@ -1,0 +1,27 @@
+{
+  "name": "blue-notes-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hermanjohn2/blue-notes-api.git"
+  },
+  "keywords": [
+    "api",
+    "server",
+    "node",
+    "express",
+    "mongo"
+  ],
+  "author": "John Herman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hermanjohn2/blue-notes-api/issues"
+  },
+  "homepage": "https://github.com/hermanjohn2/blue-notes-api#readme"
+}
